@@ -8601,3 +8601,54 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+
+		.form-success {
+			color: green;
+			margin-top: 1em;
+			font-weight: bold;
+		}
+	
+		.form-error {
+			color: red;
+			margin-top: 1em;
+			font-weight: bold;
+		}
+
+		#about {
+			background-color: #f9f9f9;
+			/* Light grey for contrast */
+		}
+
+#about h2 {
+  transition: transform 0.5s ease;
+}
+
+#about.active h2 {
+  transform: scale(1.1);
+}
+
+
+
+article:hover .image img {
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+
+article .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4); 
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+article:hover .caption {
+  opacity: 1;
+}

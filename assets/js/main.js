@@ -338,4 +338,28 @@
 
 						});
 
+$('#contact-form').on('submit', function(e) {
+		e.preventDefault();
+
+		const $form = $(this);
+		const $submit = $form.find('input[type="submit"]');
+		const $message = $('<p class="form-success">Thanks! Your message has been sent.</p>');
+
+		// Send form data using AJAX
+		$.ajax({
+			url: $form.attr('action'),
+			method: 'POST',
+			data: $form.serialize(),
+			dataType: 'json',
+			success: function() {
+				$form[0].reset();
+				$form.append($message.hide().fadeIn());
+				$submit.prop('disabled', true); // optional
+			},
+			error: function() {
+				alert('Oops! Something went wrong. Please try again.');
+			}
+		});
+	});
+
 })(jQuery);
