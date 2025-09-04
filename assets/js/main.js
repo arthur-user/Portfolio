@@ -362,4 +362,27 @@ $('#contact-form').on('submit', function(e) {
 		});
 	});
 
+// Font grow effect on "About Me" when it scrolls into view
+const aboutContent = document.querySelector("#about .content");
+
+if (aboutContent) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("about-grow");
+        } else {
+          entry.target.classList.remove("about-grow"); 
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  observer.observe(aboutContent);
+}
+
+	
 })(jQuery);
