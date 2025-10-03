@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Saryan - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        h2 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        
+        .skill-item {
+            line-height: 1.6;
+        }
+        
+        .skill-category {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .experience-item, .education-item, .cert-item, .project-item {
+            margin-bottom: 18px;
+        }
+        
+        .experience-header, .education-header, .cert-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+        
+        .job-title, .degree-title, .cert-title, .project-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 13px;
+        }
+        
+        .company, .school {
+            font-style: italic;
+            color: #555;
+            font-size: 12px;
+        }
+        
+        .date {
+            font-weight: 600;
+            color: #7f8c8d;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        
+        .tech-stack {
+            color: #16a085;
+            font-size: 11px;
+            font-style: italic;
+            margin-top: 2px;
+        }
+        
+        .project-links {
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .project-links a {
+            color: #2980b9;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 6px;
+            font-size: 12px;
+        }
+        
+        ul li {
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        
+        .cert-description {
+            font-size: 11px;
+            color: #555;
+            font-style: italic;
+            margin-top: 3px;
+        }
+        
+        .competency-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .competency-item {
+            line-height: 1.5;
+        }
+        
+        .competency-title {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            header {
+                margin-bottom: 15px;
+            }
+            
+            h2 {
+                margin-top: 15px;
+                page-break-after: avoid;
+            }
+            
+            .experience-item, .project-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ARTUR SARYAN</h1>
+        <div class="contact-info">
+            <strong>Email:</strong> arthursaryan@gmail.com | <strong>Phone:</strong> (213) 595-5486<br>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/artur-saryan-589148362" target="_blank">linkedin.com/in/artur-saryan-589148362</a> | 
+            <strong>GitHub:</strong> <a href="https://github.com/arthur-user" target="_blank">github.com/arthur-user</a><br>
+            <strong>Portfolio:</strong> <a href="https://arthur-user.github.io/test2/" target="_blank">arthur-user.github.io/test2</a> | 
+            <strong>Location:</strong> Los Angeles, CA
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">
+            Full-stack developer with a background in psychology and client-focused service. Certified in frontend and backend development, data engineering, and AWS cloud technologies. Skilled in building scalable systems using JavaScript, Python, React, Node.js, and AWS services including EC2, Lambda, and S3. Leverages strong communication skills and user empathy gained from psychology and direct client support experience. Passionate about creating secure, scalable, and human-centered technology solutions.
+        </p>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><span class="skill-category">Programming Languages:</span> JavaScript, Python, SQL</div>
+            <div class="skill-item"><span class="skill-category">Frontend:</span> React, HTML5, CSS3</div>
+            <div class="skill-item"><span class="skill-category">Backend:</span> Node.js, Express.js, RESTful APIs</div>
+            <div class="skill-item"><span class="skill-category">Databases:</span> MySQL, PostgreSQL, MongoDB, Cassandra (NoSQL)</div>
+            <div class="skill-item"><span class="skill-category">Cloud Platforms:</span> AWS (Certified Cloud Practitioner)</div>
+            <div class="skill-item"><span class="skill-category">AWS Services:</span> EC2, Lambda, S3, RDS, DynamoDB, Redshift, VPC, CloudWatch, IAM, CloudFormation</div>
+            <div class="skill-item"><span class="skill-category">Data Engineering:</span> Apache Spark, ETL/ELT processes, Data Warehousing, Data Lifecycle Management</div>
+            <div class="skill-item"><span class="skill-category">Data Analysis:</span> Jupyter Notebooks, pandas, matplotlib, seaborn</div>
+            <div class="skill-item"><span class="skill-category">Authentication:</span> JWT, OAuth 2.0</div>
+            <div class="skill-item"><span class="skill-category">Development Tools:</span> Git, GitHub, WSL/Ubuntu, UNIX command line</div>
+            <div class="skill-item"><span class="skill-category">Methodologies:</span> Agile, Scrum</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree-title">Bachelor of Arts in Psychology</div>
+                    <div class="school">California State University, Fullerton</div>
+                </div>
+                <div class="date">2019</div>
+            </div>
+        </div>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree-title">Associate of Arts in Psychology</div>
+                    <div class="school">Los Angeles City College</div>
+                </div>
+                <div class="date">2016</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <div class="cert-item">
+            <div class="cert-header">
+                <div>
+                    <div class="cert-title">Backend Engineer Career Path</div>
+                    <div class="school">Codecademy</div>
+                </div>
+                <div class="date">Completed March 2025</div>
+            </div>
+            <div class="cert-description">Comprehensive program covering: Software Engineering Foundations, Advanced Backend Development, Security & Infrastructure, Web Scalability, Data Structures & Algorithms</div>
+        </div>
+        <div class="cert-item">
+            <div class="cert-header">
+                <div>
+                    <div class="cert-title">Learn React</div>
+                    <div class="school">Codecademy</div>
+                </div>
+                <div class="date">Completed October 2025</div>
+            </div>
+            <div class="cert-description">Comprehensive program covering: React fundamentals, JSX, Components, Props & State, Hooks, Lifecycle Methods, React Router, State Management</div>
+        </div>
+        <div class="cert-item">
+            <div class="cert-header">
+                <div>
+                    <div class="cert-title">AWS Certified Cloud Practitioner</div>
+                    <div class="school">Amazon Web Services</div>
+                </div>
+                <div class="date">Completed April 2025</div>
+            </div>
+        </div>
+        <div class="cert-item">
+            <div class="cert-header">
+                <div>
+                    <div class="cert-title">IBM Data Engineering Professional Certificate</div>
+                    <div class="school">Coursera</div>
+                </div>
+                <div class="date">Completed June 2024</div>
+            </div>
+            <div class="cert-description">13-course program covering: Data Engineering Fundamentals, Python for Data Science, ETL Pipelines with Airflow & Kafka, Big Data with Spark & Hadoop, NoSQL Databases, Data Warehousing & BI Analytics, Database Administration, Linux & Shell Scripting</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Professional Experience</h2>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="job-title">Computer Lab Assistant, Communications Studies Department</div>
+                    <div class="company">Los Angeles City College</div>
+                </div>
+                <div class="date">2014</div>
+            </div>
+            <ul>
+                <li>Assisted students with lab equipment and communication software</li>
+                <li>Maintained a supportive and quiet learning environment</li>
+                <li>Helped troubleshoot basic technical issues</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="job-title">In-Home Supportive Services (IHSS) Worker</div>
+                    <div class="company">Various Clients</div>
+                </div>
+                <div class="date">2015–2024</div>
+            </div>
+            <ul>
+                <li>Provided daily living assistance to elderly and disabled clients</li>
+                <li>Managed administrative tasks including tax preparation, document organization, check writing, and financial record keeping</li>
+                <li>Troubleshot basic technology issues with computers, TVs, and electronic devices</li>
+                <li>Maintained client dignity and comfort while supporting independence</li>
+                <li>Communicated with family members and case managers regarding client needs</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Volunteer Experience</h2>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="job-title">Medical Office Volunteer</div>
+                    <div class="company">Dr. Kltcian's Office, Los Angeles, CA</div>
+                </div>
+                <div class="date">2018</div>
+            </div>
+            <ul>
+                <li>Assisted front desk with filing, appointment scheduling, and greeting patients</li>
+                <li>Maintained patient confidentiality in compliance with HIPAA</li>
+                <li>Supported staff with organizing patient bookkeeping and basic administrative tasks</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="project-item">
+            <div class="project-header">
+                <div>
+                    <div class="project-title">Socket-Chat-API</div>
+                    <div class="tech-stack">React, Socket.io, Node.js, Express, Authentication</div>
+                    <div class="project-links">
+                        <a href="https://github.com/arthur-user/socket-chat-api" target="_blank">GitHub</a>
+                        <a href="https://www.youtube.com/watch?v=TC_BMaweoVU" target="_blank">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>Built real-time chat application with user registration and login functionality</li>
+                <li>Implemented persistent data storage for users, chats, and messages</li>
+                <li>Integrated WebSocket technology for live messaging capabilities</li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="project-header">
+                <div>
+                    <div class="project-title">Photo-Caption-Contest-API</div>
+                    <div class="tech-stack">Node.js, Express, Authentication, Caching</div>
+                    <div class="project-links">
+                        <a href="https://github.com/arthur-user/photo-caption-contest-api" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>Developed RESTful API for image viewing and captioning platform</li>
+                <li>Implemented user registration system with authorization and authentication</li>
+                <li>Utilized caching strategies and database persistence for optimal performance</li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="project-header">
+                <div>
+                    <div class="project-title">Envelope-Budgeting-API</div>
+                    <div class="tech-stack">Node.js, Express, PostgreSQL, CRUD Operations</div>
+                    <div class="project-links">
+                        <a href="https://github.com/arthur-user/envelope-budgeting-api" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>Created personal finance API using envelope budgeting methodology</li>
+                <li>Built complete CRUD functionality for budget envelope management</li>
+                <li>Implemented transaction tracking and fund transfer capabilities with PostgreSQL database</li>
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="project-header">
+                <div>
+                    <div class="project-title">Common North American Birds Generator</div>
+                    <div class="tech-stack">JavaScript</div>
+                    <div class="project-links">
+                        <a href="https://github.com/arthur-user/birds-generator" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>Developed interactive educational tool featuring North American bird species</li>
+                <li>Implemented random generation algorithm for bird facts and information</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Core Competencies</h2>
+        <div class="competency-grid">
+            <div class="competency-item"><span class="competency-title">Analytical Thinking:</span> Strong foundation in research methodology and statistical analysis from psychology background</div>
+            <div class="competency-item"><span class="competency-title">Problem Solving:</span> Experience breaking down complex behavioral patterns and research questions</div>
+            <div class="competency-item"><span class="competency-title">Attention to Detail:</span> Precision in data collection, analysis, and documentation</div>
+            <div class="competency-item"><span class="competency-title">Communication:</span> Ability to explain complex concepts to diverse audiences</div>
+            <div class="competency-item"><span class="competency-title">Adaptability:</span> Successfully transitioned from psychology to technical field through self-directed learning</div>
+        </div>
+    </section>
+</body>
+</html>
