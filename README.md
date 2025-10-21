@@ -31,10 +31,12 @@ Welcome! This is the source code for my personal portfolio website. It is a show
 
 To preview this portfolio on your local machine:
 
-git clone https://github.com/arthur-user/Portfolio.git
-cd Portfolio
-open index.html  # Or just drag into your browser
-
+- git clone https://github.com/arthur-user/Portfolio.git
+- cd Portfolio
+- macOS: open index.html
+- Linux: xdg-open index.html
+- Windows: start index.html (in Command Prompt or PowerShell)
+- Or simply drag index.html into your browser window
 
 
 📬 Contact Me
