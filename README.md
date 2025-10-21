@@ -31,11 +31,9 @@ Welcome! This is the source code for my personal portfolio website. It is a show
 
 To preview this portfolio on your local machine:
 
-```bash
 git clone https://github.com/arthur-user/Portfolio.git
 cd Portfolio
 open index.html  # Or just drag into your browser
-
 
 
 
