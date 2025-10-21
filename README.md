@@ -27,6 +27,18 @@ Welcome! This is the source code for my personal portfolio website. It is a show
 - 📱 Fully responsive on mobile, tablet, and desktop
 
 ---
+## 🧪 Run Locally
+
+To preview this portfolio on your local machine:
+
+```bash
+git clone https://github.com/arthur-user/Portfolio.git
+cd Portfolio
+open index.html  # Or just drag into your browser
+
+
+
+
 📬 Contact Me
 
 If you’d like to connect, collaborate, or just say hi:
