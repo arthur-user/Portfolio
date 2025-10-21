@@ -1,4 +1,4 @@
-# 🌐 Artur Saryan's Developer Portfolio
+#  🌐 Artur Saryan's Developer Portfolio
 
 Welcome! This is the source code for my personal portfolio website. It is a showcase of my full-stack development skills, projects, and technical background.
 
