@@ -362,27 +362,26 @@ $('#contact-form').on('submit', function(e) {
 		});
 	});
 
-// Font grow effect on "About Me" when it scrolls into view
-const aboutContent = document.querySelector("#about .content");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("bw-toggle");
 
-if (aboutContent) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("about-grow");
-        } else {
-          entry.target.classList.remove("about-grow"); 
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("bw-mode");
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.toggle('invert');
+    });
+    localStorage.setItem(
+      "bwMode",
+      document.body.classList.contains("bw-mode") ? "on" : "off"
+    );
+  });
 
-  observer.observe(aboutContent);
-}
+  if (localStorage.getItem("bwMode") === "on") {
+    document.body.classList.add("bw-mode");
+    document.querySelectorAll('section').forEach(section => section.classList.add('invert'));
+  }
+});
 
-	
+
+
 })(jQuery);
