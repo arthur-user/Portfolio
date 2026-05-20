@@ -1,8 +1,4 @@
-/*
-	Story by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 (function($) {
 
@@ -382,6 +378,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+//hover
 
+$(document).ready(function() {
+
+    $('.spotlight .image img[data-hover]').hover(
+
+        function() {
+
+            var $img = $(this);
+            var $link = $img.parent('a');
+
+            // Save originals
+            $img.data('original', $img.attr('src'));
+            $link.data('originalHref', $link.attr('href'));
+
+            // Parse hover data
+            var hoverData = JSON.parse($img.attr('data-hover'));
+
+            var index = 0;
+
+            // First image/link
+            $img.attr('src', hoverData[index].image);
+            $link.attr('href', hoverData[index].link);
+
+            // Rotate
+            var interval = setInterval(function() {
+
+                index = (index + 1) % hoverData.length;
+
+                $img.attr('src', hoverData[index].image);
+                $link.attr('href', hoverData[index].link);
+
+            }, 1000);
+
+            $img.data('interval', interval);
+
+        },
+
+        function() {
+
+            var $img = $(this);
+            var $link = $img.parent('a');
+
+            clearInterval($img.data('interval'));
+
+            // Restore originals
+            $img.attr('src', $img.data('original'));
+            $link.attr('href', $link.data('originalHref'));
+
+        }
+
+    );
+
+});
 
 })(jQuery);
