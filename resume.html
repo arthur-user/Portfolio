@@ -1,429 +1,886 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artur Saryan - Resume</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Calibri', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #fff;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #2c3e50;
-        }
-        
-        h1 {
-            font-size: 32px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .contact-info {
-            font-size: 11px;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .contact-info a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        h2 {
-            font-size: 18px;
-            color: #2c3e50;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #3498db;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .summary {
-            margin-bottom: 20px;
-            text-align: justify;
-            font-size: 13px;
-            line-height: 1.7;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 12px;
-        }
-        
-        .skill-item {
-            line-height: 1.6;
-        }
-        
-        .skill-category {
-            font-weight: 700;
-            color: #2c3e50;
-        }
-        
-        .experience-item, .education-item, .cert-item, .project-item {
-            margin-bottom: 18px;
-        }
-        
-        .experience-header, .education-header, .cert-header, .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 6px;
-        }
-        
-        .job-title, .degree-title, .cert-title, .project-title {
-            font-weight: 700;
-            color: #2c3e50;
-            font-size: 13px;
-        }
-        
-        .company, .school {
-            font-style: italic;
-            color: #555;
-            font-size: 12px;
-        }
-        
-        .date {
-            font-weight: 600;
-            color: #7f8c8d;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-        
-        .tech-stack {
-            color: #16a085;
-            font-size: 11px;
-            font-style: italic;
-            margin-top: 2px;
-        }
-        
-        .project-links {
-            font-size: 11px;
-            margin-top: 3px;
-        }
-        
-        .project-links a {
-            color: #2980b9;
-            text-decoration: none;
-            margin-right: 15px;
-        }
-        
-        .project-links a:hover {
-            text-decoration: underline;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-top: 6px;
-            font-size: 12px;
-        }
-        
-        ul li {
-            margin-bottom: 4px;
-            line-height: 1.5;
-        }
-        
-        .cert-description {
-            font-size: 11px;
-            color: #555;
-            font-style: italic;
-            margin-top: 3px;
-        }
-        
-        .competency-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            font-size: 12px;
-        }
-        
-        .competency-item {
-            line-height: 1.5;
-        }
-        
-        .competency-title {
-            font-weight: 700;
-            color: #2c3e50;
-        }
-        
-        @media print {
-            body {
-                margin: 0;
-                padding: 20px;
-                max-width: 100%;
-            }
-            
-            header {
-                margin-bottom: 15px;
-            }
-            
-            h2 {
-                margin-top: 15px;
-                page-break-after: avoid;
-            }
-            
-            .experience-item, .project-item {
-                page-break-inside: avoid;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artur Saryan — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0f2540;
+      --navy-mid: #1b3a6b;
+      --navy-light: #2a5298;
+      --accent: #c8a96e;
+      --accent-light: #e8d5a3;
+      --cream: #faf8f4;
+      --warm-white: #ffffff;
+      --text: #1a1a2e;
+      --text-mid: #3d3d5c;
+      --text-light: #6b6b8d;
+      --rule: #ddd8cc;
+      --tag-bg: #eef2f8;
+      --tag-text: #1b3a6b;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Outfit', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── SIDEBAR ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    aside {
+      background: var(--navy);
+      color: #c9d6e8;
+      padding: 3rem 2rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .name-block .initials {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .name-block h1 {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .name-block .role {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-block a,
+    .contact-block span {
+      font-size: 0.82rem;
+      color: #94afc8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .contact-block a:hover {
+      color: var(--accent-light);
+    }
+
+    .contact-block .icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .side-section h3 {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(200, 169, 110, 0.25);
+    }
+
+    .skill-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .skill-group .label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: #8aa8c4;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .skill-tags span {
+      font-size: 0.7rem;
+      background: rgba(255, 255, 255, 0.07);
+      color: #b8cfe4;
+      padding: 2px 8px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: var(--mono);
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .cert-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .cert-item .cert-name {
+      font-size: 0.78rem;
+      color: #c9d6e8;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .cert-item .cert-org {
+      font-size: 0.7rem;
+      color: #6a8ba8;
+      font-family: var(--mono);
+    }
+
+    /* ── MAIN ── */
+    main {
+      background: var(--warm-white);
+      padding: 3.5rem 3rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .summary-block p {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      max-width: 640px;
+      font-weight: 300;
+    }
+
+    .summary-block p strong {
+      color: var(--navy-mid);
+      font-weight: 500;
+    }
+
+    /* Section headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--navy);
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    .section-header .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .project-card {
+      border: 1px solid #e8e4dc;
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      background: var(--cream);
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--navy-light);
+      transform: translateX(3px);
+    }
+
+    .project-card .accent-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 8px 0 0 8px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .project-card:hover .accent-line {
+      opacity: 1;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-top h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .project-links a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      font-family: var(--mono);
+      color: var(--navy-light);
+      text-decoration: none;
+      border: 1px solid #b8cce4;
+      padding: 2px 10px;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .project-links a:hover {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .project-stack {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      font-family: var(--mono);
+      margin-bottom: 0.85rem;
+    }
+
+    .project-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .project-card ul li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .project-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Experience */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .exp-item {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+
+    .exp-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-line {
+      width: 1px;
+      flex: 1;
+      background: #ddd8cc;
+      margin-top: 4px;
+    }
+
+    .exp-content {
+      flex: 1;
+      padding-bottom: 1rem;
+    }
+
+    .exp-header {
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-header h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .exp-meta {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-family: var(--mono);
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-content ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .exp-content ul li {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .exp-content ul li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .exp-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Competencies */
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .comp-card {
+      background: var(--cream);
+      border: 1px solid #e8e4dc;
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+    }
+
+    .comp-card h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy-mid);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .comp-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Print button */
+    .print-btn {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .print-btn:hover {
+      background: var(--navy-light);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-card,
+    .exp-item,
+    .comp-card {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .project-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .project-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .project-card:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+
+    .project-card:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        height: auto;
+      }
+
+      main {
+        padding: 2rem 1.5rem;
+      }
+
+      .print-btn {
+        display: none;
+      }
+    }
+
+    @media print {
+      .print-btn {
+        display: none;
+      }
+
+      aside {
+        position: static;
+        height: auto;
+      }
+
+      .project-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>ARTUR SARYAN</h1>
-        <div class="contact-info">
-            <strong>Email:</strong> arthursaryan@gmail.com | <strong>Phone:</strong> (213) 595-5486<br>
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/artur-saryan-589148362" target="_blank">linkedin.com/in/artur-saryan-589148362</a> | 
-            <strong>GitHub:</strong> <a href="https://github.com/arthur-user" target="_blank">github.com/arthur-user</a><br>
-            <strong>Portfolio:</strong> <a href="https://arthur-user.github.io/Portfolio/" target="_blank">https://arthur-user.github.io/Portfolio/</a> | 
-            <strong>Location:</strong> Los Angeles, CA
-        </div>
-    </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p class="summary">
-            Full-stack developer with a background in psychology and client-focused service. Certified in frontend and backend development, data engineering, and AWS cloud technologies. Skilled in building scalable systems using JavaScript, Python, React, Node.js, and AWS services including EC2, Lambda, and S3. Leverages strong communication skills and user empathy gained from psychology and direct client support experience. Passionate about creating secure, scalable, and human-centered technology solutions.
-        </p>
-    </section>
+  <div class="layout">
 
-    <section>
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item"><span class="skill-category">Programming Languages:</span> JavaScript, Python, SQL</div>
-            <div class="skill-item"><span class="skill-category">Frontend:</span> React, HTML5, CSS3</div>
-            <div class="skill-item"><span class="skill-category">Backend:</span> Node.js, Express.js, RESTful APIs</div>
-            <div class="skill-item"><span class="skill-category">Databases:</span> MySQL, PostgreSQL, MongoDB, Cassandra (NoSQL)</div>
-            <div class="skill-item"><span class="skill-category">Cloud Platforms:</span> AWS (Certified Cloud Practitioner)</div>
-            <div class="skill-item"><span class="skill-category">AWS Services:</span> EC2, Lambda, S3, RDS, DynamoDB, Redshift, VPC, CloudWatch, IAM, CloudFormation</div>
-            <div class="skill-item"><span class="skill-category">Data Engineering:</span> Apache Spark, ETL/ELT processes, Data Warehousing, Data Lifecycle Management</div>
-            <div class="skill-item"><span class="skill-category">Data Analysis:</span> Jupyter Notebooks, pandas, matplotlib, seaborn</div>
-            <div class="skill-item"><span class="skill-category">Authentication:</span> JWT, OAuth 2.0</div>
-            <div class="skill-item"><span class="skill-category">Development Tools:</span> Git, GitHub, WSL/Ubuntu, UNIX command line</div>
-            <div class="skill-item"><span class="skill-category">Methodologies:</span> Agile, Scrum</div>
-        </div>
-    </section>
+    <!-- ── SIDEBAR ── -->
+    <aside>
+      <div class="name-block">
+        <div class="initials">AS</div>
+        <h1>Artur Saryan</h1>
+        <div class="role">Full-Stack Developer</div>
+      </div>
 
-    <section>
-        <h2>Education</h2>
-        <div class="education-item">
-            <div class="education-header">
-                <div>
-                    <div class="degree-title">Bachelor of Arts in Psychology</div>
-                    <div class="school">California State University, Fullerton</div>
-                </div>
-                <div class="date">2019</div>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="education-header">
-                <div>
-                    <div class="degree-title">Associate of Arts in Psychology</div>
-                    <div class="school">Los Angeles City College</div>
-                </div>
-                <div class="date">2016</div>
-            </div>
-        </div>
-    </section>
+      <div class="contact-block">
+        <span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Los Angeles, CA
+        </span>
+        <a href="mailto:arthursaryan@gmail.com">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          arthursaryan@gmail.com
+        </a>
+        <a href="tel:2135955486">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          (213) 595-5486
+        </a>
+        <a href="https://github.com/arthur-user" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+          </svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/artur-saryan-589148362" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://arthur-user.github.io/Portfolio/" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+          Portfolio
+        </a>
+      </div>
 
-    <section>
-        <h2>Certifications</h2>
-        <div class="cert-item">
-            <div class="cert-header">
-                <div>
-                    <div class="cert-title">Backend Engineer Career Path</div>
-                    <div class="school">Codecademy</div>
-                </div>
-                <div class="date">Completed March 2025</div>
-            </div>
-            <div class="cert-description">Comprehensive program covering: Software Engineering Foundations, Advanced Backend Development, Security & Infrastructure, Web Scalability, Data Structures & Algorithms</div>
+      <div class="side-section">
+        <h3>Technical Skills</h3>
+        <div class="skill-group">
+          <div class="label">Languages</div>
+          <div class="skill-tags"><span>JavaScript</span><span>Python</span><span>SQL</span></div>
         </div>
-        <div class="cert-item">
-            <div class="cert-header">
-                <div>
-                    <div class="cert-title">Learn React (Fundamentals, Advanced & Router v6)</div>
-                    <div class="school">Codecademy</div>
-                </div>
-                <div class="date">September - October 2025</div>
-            </div>
-            <div class="cert-description">Comprehensive program covering: React fundamentals, JSX, Components, Props & State, Hooks, Lifecycle Methods, Custom Hooks, Advanced Patterns, Performance Optimization, Context API, React Router v6</div>
+        <div class="skill-group">
+          <div class="label">Frontend</div>
+          <div class="skill-tags"><span>React</span><span>Next.js</span><span>Redux</span><span>React
+              Router</span><span>Tailwind</span><span>HTML5</span><span>CSS3</span></div>
         </div>
-        <div class="cert-item">
-            <div class="cert-header">
-                <div>
-                    <div class="cert-title">AWS Certified Cloud Practitioner</div>
-                    <div class="school">Amazon Web Services</div>
-                </div>
-                <div class="date">Completed April 2025</div>
-            </div>
+        <div class="skill-group">
+          <div class="label">Backend</div>
+          <div class="skill-tags"><span>Node.js</span><span>Express</span><span>Socket.io</span><span>REST APIs</span>
+          </div>
         </div>
-        <div class="cert-item">
-            <div class="cert-header">
-                <div>
-                    <div class="cert-title">IBM Data Engineering Professional Certificate</div>
-                    <div class="school">Coursera</div>
-                </div>
-                <div class="date">Completed June 2024</div>
-            </div>
-            <div class="cert-description">13-course program covering: Data Engineering Fundamentals, Python for Data Science, ETL Pipelines with Airflow & Kafka, Big Data with Spark & Hadoop, NoSQL Databases, Data Warehousing & BI Analytics, Database Administration, Linux & Shell Scripting</div>
+        <div class="skill-group">
+          <div class="label">Databases</div>
+          <div class="skill-tags"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Supabase</span>
+          </div>
         </div>
-    </section>
+        <div class="skill-group">
+          <div class="label">Cloud & Tools</div>
+          <div class="skill-tags">
+            <span>AWS</span><span>Vercel</span><span>Render</span><span>Git</span><span>JWT</span><span>OAuth 2.0</span>
+          </div>
+        </div>
+      </div>
 
-    <section>
-        <h2>Professional Experience</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <div class="job-title">Computer Lab Assistant, Communications Studies Department</div>
-                    <div class="company">Los Angeles City College</div>
-                </div>
-                <div class="date">2014</div>
+      <div class="side-section">
+        <h3>Certifications</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-name">AWS Certified Cloud Practitioner</span>
+            <span class="cert-org">Amazon Web Services · 2025</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">IBM Data Engineering Professional Certificate</span>
+            <span class="cert-org">Coursera · 2024</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Backend Engineer Career Path</span>
+            <span class="cert-org">Codecademy · 2025</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Learn React, Redux & Next.js</span>
+            <span class="cert-org">Codecademy · 2025–2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <h3>Education</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-name">B.A. Psychology</span>
+            <span class="cert-org">Cal State Fullerton · 2019</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">A.A. Psychology</span>
+            <span class="cert-org">LA City College · 2016</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <main>
+
+      <!-- Summary -->
+      <div class="summary-block">
+        <p>Full-stack developer with experience building and deploying scalable web applications using
+          <strong>JavaScript, React, Next.js, Node.js, Express, PostgreSQL,</strong> and <strong>AWS</strong> cloud
+          services. Background in psychology and client support brings strong communication, analytical thinking, and
+          user-centered problem solving to software development.</p>
+      </div>
+
+      <!-- Projects -->
+      <section>
+        <div class="section-header">
+          <h2>Projects</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="accent-line"></div>
+            <div class="project-top">
+              <h3>Sanctuary-Stays</h3>
+              <div class="project-links">
+                <a href="https://github.com/arthur-user/sanctuary-stays" target="_blank">GitHub ↗</a>
+                <a href="https://sanctuary-stays.vercel.app" target="_blank">Live Demo ↗</a>
+              </div>
             </div>
+            <div class="project-stack">Next.js · Supabase · Tailwind CSS · OAuth 2.0</div>
             <ul>
-                <li>Assisted students with lab equipment and communication software</li>
-                <li>Maintained a supportive and quiet learning environment</li>
-                <li>Helped troubleshoot basic technical issues</li>
+              <li>Full-stack cabin reservation platform with server-side rendering and OAuth authentication</li>
+              <li>Built end-to-end reservation workflows including booking creation, editing, and cancellation with
+                conflict-aware state handling</li>
+              <li>Integrated Supabase authentication and database services with protected account and reservation routes
+              </li>
+              <li>Optimized initial page load performance with Next.js SSR and responsive Tailwind UI</li>
             </ul>
-        </div>
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <div class="job-title">In-Home Supportive Services (IHSS) Worker</div>
-                    <div class="company">Various Clients</div>
-                </div>
-                <div class="date">2015–2024</div>
-            </div>
-            <ul>
-                <li>Provided daily living assistance to elderly and disabled clients</li>
-                <li>Managed administrative tasks including tax preparation, document organization, check writing, and financial record keeping</li>
-                <li>Troubleshot basic technology issues with computers, TVs, and electronic devices</li>
-                <li>Maintained client dignity and comfort while supporting independence</li>
-                <li>Communicated with family members and case managers regarding client needs</li>
-            </ul>
-        </div>
-    </section>
+          </div>
 
-    <section>
-        <h2>Volunteer Experience</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <div>
-                    <div class="job-title">Medical Office Volunteer</div>
-                    <div class="company">Dr. Kltcian's Office, Los Angeles, CA</div>
-                </div>
-                <div class="date">2018</div>
-            </div>
-            <ul>
-                <li>Assisted front desk with filing, appointment scheduling, and greeting patients</li>
-                <li>Maintained patient confidentiality in compliance with HIPAA</li>
-                <li>Supported staff with organizing patient bookkeeping and basic administrative tasks</li>
-            </ul>
-        </div>
-    </section>
+          <div class="project-card">
+            <div class="accent-line"></div>
+            <div class="project-top">
+              <h3>Redux News</h3>
+              <div class="project-links">
+                <a href="https://github.com/arthur-user/redux-news" target="_blank">GitHub ↗</a>
+                <a href="https://redux-news-rosy.vercel.app/" target="_blank">Live Demo ↗</a>
 
-    <section>
-        <h2>Projects</h2>
-        <div class="project-item">
-            <div class="project-header">
-                <div>
-                    <div class="project-title">Socket-Chat-API</div>
-                    <div class="tech-stack">React, Socket.io, Node.js, Express, Authentication</div>
-                    <div class="project-links">
-                        <a href="https://github.com/arthur-user/socket-chat-api" target="_blank">GitHub</a>
-                        <a href="https://www.youtube.com/watch?v=TC_BMaweoVU" target="_blank">Video Demo</a>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div class="project-stack">React · Redux Toolkit · Node.js · Express · Vite · MSW</div>
             <ul>
-                <li>Built real-time chat application with user registration and login functionality</li>
-                <li>Implemented persistent data storage for users, chats, and messages</li>
-                <li>Integrated WebSocket technology for live messaging capabilities</li>
+              <li>Full-stack news aggregation platform with decoupled frontend/backend architecture</li>
+              <li>Managed complex async global state using Redux Toolkit and React-Redux, eliminating prop-drilling
+                across component trees</li>
+              <li>Deployed frontend and backend separately to Vercel and Render with environment-variable based API
+                configuration</li>
+              <li>Implemented isolated frontend testing using Mock Service Worker (MSW)</li>
             </ul>
-        </div>
-        <div class="project-item">
-            <div class="project-header">
-                <div>
-                    <div class="project-title">Photo-Caption-Contest-API</div>
-                    <div class="tech-stack">Node.js, Express, Authentication, Caching</div>
-                    <div class="project-links">
-                        <a href="https://github.com/arthur-user/photo-caption-contest-api" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Developed RESTful API for image viewing and captioning platform</li>
-                <li>Implemented user registration system with authorization and authentication</li>
-                <li>Utilized caching strategies and database persistence for optimal performance</li>
-            </ul>
-        </div>
-        <div class="project-item">
-            <div class="project-header">
-                <div>
-                    <div class="project-title">Envelope-Budgeting-API</div>
-                    <div class="tech-stack">Node.js, Express, PostgreSQL, CRUD Operations</div>
-                    <div class="project-links">
-                        <a href="https://github.com/arthur-user/envelope-budgeting-api" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Created personal finance API using envelope budgeting methodology</li>
-                <li>Built complete CRUD functionality for budget envelope management</li>
-                <li>Implemented transaction tracking and fund transfer capabilities with PostgreSQL database</li>
-            </ul>
-        </div>
-        <div class="project-item">
-            <div class="project-header">
-                <div>
-                    <div class="project-title">Common North American Birds Generator</div>
-                    <div class="tech-stack">JavaScript</div>
-                    <div class="project-links">
-                        <a href="https://github.com/arthur-user/Common-Birds" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <ul>
-                <li>Developed interactive educational tool featuring North American bird species</li>
-                <li>Implemented random generation algorithm for bird facts and information</li>
-            </ul>
-        </div>
-    </section>
+          </div>
 
-    <section>
-        <h2>Core Competencies</h2>
-        <div class="competency-grid">
-            <div class="competency-item"><span class="competency-title">Analytical Thinking:</span> Strong foundation in research methodology and statistical analysis from psychology background</div>
-            <div class="competency-item"><span class="competency-title">Problem Solving:</span> Experience breaking down complex behavioral patterns and research questions</div>
-            <div class="competency-item"><span class="competency-title">Attention to Detail:</span> Precision in data collection, analysis, and documentation</div>
-            <div class="competency-item"><span class="competency-title">Communication:</span> Ability to explain complex concepts to diverse audiences</div>
-            <div class="competency-item"><span class="competency-title">Adaptability:</span> Successfully transitioned from psychology to technical field through self-directed learning</div>
+          <div class="project-card">
+            <div class="accent-line"></div>
+            <div class="project-top">
+              <h3>Socket-Chat-API</h3>
+              <div class="project-links">
+                <a href="https://github.com/arthur-user/socket-chat-api" target="_blank">GitHub ↗</a>
+                <a href="https://www.youtube.com/watch?v=TC_BMaweoVU" target="_blank">Demo ↗</a>
+              </div>
+            </div>
+            <div class="project-stack">React · Socket.io · Node.js · Express · Authentication</div>
+            <ul>
+              <li>Real-time messaging app with bi-directional WebSocket communication via Socket.io</li>
+              <li>Built full auth flow; registration, login, and persistent session handling, including message
+                storage</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <div class="accent-line"></div>
+            <div class="project-top">
+              <h3>Envelope-Budgeting-API</h3>
+              <div class="project-links">
+                <a href="https://github.com/arthur-user/envelope-budgeting-api" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="project-stack">Node.js · Express · PostgreSQL · CRUD</div>
+            <ul>
+              <li>RESTful personal finance API using envelope budgeting methodology with full CRUD functionality</li>
+              <li>Implemented balance validation and cross-envelope fund transfer with PostgreSQL persistence</li>
+              <li>Structured scalable Express routing with clear separation of concerns across resources</li>
+            </ul>
+          </div>
+
         </div>
-    </section>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="section-header">
+          <h2>Experience</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-timeline">
+              <div class="exp-dot"></div>
+              <div class="exp-line"></div>
+            </div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <h3>In-Home Supportive Services (IHSS) Worker</h3>
+              </div>
+              <div class="exp-meta">Various Clients · 2015–Present</div>
+              <div class="exp-note">Transitioned into full-stack software development in 2024 while continuing
+                caregiving responsibilities.</div>
+              <ul>
+                <li>Provided daily support and administrative assistance for elderly and disabled clients</li>
+                <li>Managed documentation, scheduling, financial records, and communication with families and case
+                  managers</li>
+                <li>Developed strong problem-solving, communication, and organizational skills in high-responsibility
+                  client environments</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-timeline">
+              <div class="exp-dot"></div>
+            </div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <h3>Computer Lab Assistant, Communications Studies Dept.</h3>
+              </div>
+              <div class="exp-meta">Los Angeles City College · 2014</div>
+              <ul>
+                <li>Assisted students with lab equipment and communication software; troubleshot technical issues</li>
+                <li>Maintained a productive and supportive learning environment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Competencies -->
+      <section>
+        <div class="section-header">
+          <h2>Core Competencies</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="competencies-grid">
+          <div class="comp-card">
+            <h4>Analytical Thinking</h4>
+            <p>Research methodology and statistical analysis from psychology, applied to debugging and system design.
+            </p>
+          </div>
+          <div class="comp-card">
+            <h4>Problem Solving</h4>
+            <p>Experience resolving full-stack issues, from deployment failures to API integration bugs, under
+              real-world constraints.</p>
+          </div>
+          <div class="comp-card">
+            <h4>Attention to Detail</h4>
+            <p>Precision in documentation, data, and code, honed through years of administrative record keeping and
+              debugging.</p>
+          </div>
+          <div class="comp-card">
+            <h4>Communication</h4>
+            <p>Ability to bridge technical and non-technical perspectives, developed through years of direct client
+              support work.</p>
+          </div>
+          <div class="comp-card">
+            <h4>Adaptability</h4>
+            <p>Successfully transitioned from psychology into software engineering through self-directed technical
+              learning.</p>
+          </div>
+          <div class="comp-card">
+            <h4>Collaboration</h4>
+            <p>Experienced coordinating across clients, families, and case managers, which translates directly to
+              cross-functional teams.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 6 2 18 2 18 9" />
+      <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" />
+      <rect x="6" y="14" width="12" height="8" />
+    </svg>
+    Print / Save PDF
+  </button>
+
 </body>
+
 </html>
