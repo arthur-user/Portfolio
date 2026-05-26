@@ -433,34 +433,37 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    const $project = $('.portfolio-project');	//targets class instead of id (id is with #)
+    const $projects = $('.portfolio-project');
 
-    // Listen for mobile touch starts
-    $project.on('touchstart', function(e) {
-        // Checks if the project container already has an active class
-        if (!$(this).hasClass('is-active')) {
+    // 1. Target the actual link inside the project container to control redirection
+    $projects.find('.hover-link').on('click', function(e) {
+        const $container = $(this).closest('.portfolio-project');
+        
+        // Check if this container is already active
+        if (!$container.hasClass('is-active')) {
             
-            // First tap: Stop the browser from instantly following the link
+            // STOP the redirect completely on first tap/click
             e.preventDefault();
             
-            // Add the class that hides the badge and triggers the hover states
-            $(this).addClass('is-active');
+            // Remove active state from any other open projects
+            $projects.removeClass('is-active');
             
-            // Optional Integration:
+            // Activate THIS project (hides badge, reveals your image transitions)
+            $container.addClass('is-active');
             
-            $(this).trigger('mouseenter');
+            // Force the template's image-swapping logic to kick in
+            $container.trigger('mouseenter');
         }
-        /* If it already has 'is-active', this block is skipped, 
-         allowing the second tap to navigate to the live link natively. */
+        // If it ALREADY has 'is-active', this block is skipped entirely,
+        // and the link behaves completely normally, redirecting them!
     });
 
-    // Close preview / reset badge if the user taps anywhere else on the screen
-    $(document).on('touchstart', function(e) {
+    // 2. Global tap-away reset
+    $(document).on('touchstart click', function(e) {
+        // If the click/touch happens outside of any portfolio project container
         if (!$(e.target).closest('.portfolio-project').length) {
-            $project.removeClass('is-active');
-            
-            // Triggers the template's mouseleave to reset the image
-            $project.trigger('mouseleave');
+            $projects.removeClass('is-active');
+            $projects.trigger('mouseleave');
         }
     });
 });
