@@ -8683,36 +8683,37 @@ article:hover .caption {
   display: inline-block; /* Fits the container tightly around the image */
 }
 
+
 .image-container img {
   display: block;
-  max-width: 100%; /* Keeps the image responsive */
+  max-width: 100%; 
   height: auto;
 }
 
 .badge {
   position: absolute;
-  top: 10px;          /* Distance from the top edge */
-  right: 10px;        /* Distance from the right edge */
-  background-color: #1c1b1b; /* Vibrant red background */
-  color: white;       /* White text color */
-  padding: 4px 8px;   /* Internal spacing around text */
-  font-size: 12px;    /* Text size */
-  font-weight: bold;  /* Thick text */
-  border-radius: 4px; /* Slightly rounded corners */
-  text-transform: uppercase; /* Forces uppercase lettering */
-  z-index: 10;        /* Ensures the badge stays on top layer */
- 
-
-
+  top: 10px;          
+  right: 10px;        
+  background-color: #1c1b1b; 
+  color: white;       
+  padding: 4px 8px;   
+  font-size: 12px;    
+  font-weight: bold;  
+  border-radius: 4px; 
+  text-transform: uppercase; 
+  z-index: 10;        
+  pointer-events: none; /* Crucial for mobile so taps pass through to the link underneath */
+  
   transition: opacity 0.3s ease; 
-  opacity: 0.6;
+  opacity: 0.6; 
 }
 
-/* Hides the badge when the container is hovered */
-#portfolio-project:hover .badge {
-  opacity: 0;
+/*Desktop-Only Interaction (Only hides the badge if a mouse hovers)*/
+
+@media (hover: hover) and (pointer: fine) {
+  
+  /* Hides the badge cleanly when a desktop user hovers over the project container */
+  #portfolio-project:hover .badge {
+    opacity: 0;
+  }
 }
-
-
-
-
