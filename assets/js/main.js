@@ -435,32 +435,36 @@ $(document).ready(function() {
 $(document).ready(function() {
     const $projects = $('.portfolio-project');
 
-    // 1. Target the actual link inside the project container to control redirection
+    // Handle the link click conditionally
     $projects.find('.hover-link').on('click', function(e) {
+        // Detect if the device supports true hover (Desktop with a mouse)
+        // If it DOES support hover, matchMedia().matches will be TRUE
+        const isDesktopMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+        // If it's desktop, do absolutely nothing! Let the single click pass through naturally.
+        if (isDesktopMouse) {
+            return; 
+        }
+
+        // --- MOBILE ONLY LOGIC BELOW ---
+        // If we reached this point, the user is on a touch device (no hover capability)
         const $container = $(this).closest('.portfolio-project');
-        
-        // Check if this container is already active
+
         if (!$container.hasClass('is-active')) {
-            
-            // STOP the redirect completely on first tap/click
+            // Stop the mobile redirect on the first tap
             e.preventDefault();
+			e.stopPropagation();
             
-            // Remove active state from any other open projects
+            // Clear other active cards, activate this one, and trigger the image swap
             $projects.removeClass('is-active');
-            
-            // Activate THIS project (hides badge, reveals your image transitions)
             $container.addClass('is-active');
-            
-            // Force the template's image-swapping logic to kick in
             $container.trigger('mouseenter');
         }
-        // If it ALREADY has 'is-active', this block is skipped entirely,
-        // and the link behaves completely normally, redirecting them!
+        // Second tap falls through and navigates perfectly!
     });
 
-    // 2. Global tap-away reset
+    // Global reset when tapping away (Mobile only)
     $(document).on('touchstart click', function(e) {
-        // If the click/touch happens outside of any portfolio project container
         if (!$(e.target).closest('.portfolio-project').length) {
             $projects.removeClass('is-active');
             $projects.trigger('mouseleave');
