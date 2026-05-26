@@ -8713,7 +8713,7 @@ article:hover .caption {
 @media (hover: hover) and (pointer: fine) {
   
   /* Hides the badge cleanly when a desktop user hovers over the project container */
-  #portfolio-project:hover .badge {
+  .portfolio-project:hover .badge {
     opacity: 0;
   }
 }

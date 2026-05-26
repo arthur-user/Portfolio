@@ -23,7 +23,7 @@
 			}, 100);
 		});
 
-	// Browser fixes.
+	
 
 		// IE: Flexbox min-height bug.
 			if (browser.name == 'ie')
@@ -178,10 +178,9 @@
 				.css('overflow-x', browser.mobile ? 'scroll' : 'hidden')
 				.scrollLeft(0);
 
-		// Style #1.
-			// ...
+		
 
-		// Style #2.
+		
 			$('.gallery')
 				.on('wheel', '.inner', function(event) {
 
@@ -230,7 +229,7 @@
 						$modalImg = $modal.find('img'),
 						href = $a.attr('href');
 
-					// Not an image? Bail.
+					// Not an image? Cancel.
 						if (!href.match(/\.(jpg|gif|png|mp4)$/))
 							return;
 
@@ -268,11 +267,11 @@
 					var $modal = $(this),
 						$modalImg = $modal.find('img');
 
-					// Locked? Bail.
+					// Locked? Cancel.
 						if ($modal[0]._locked)
 							return;
 
-					// Already hidden? Bail.
+					// Already hidden? Cancel.
 						if (!$modal.hasClass('visible'))
 							return;
 
@@ -323,7 +322,7 @@
 
 							setTimeout(function() {
 
-								// No longer visible? Bail.
+								// No longer visible? Stop.
 									if (!$modal.hasClass('visible'))
 										return;
 
@@ -341,7 +340,7 @@ $('#contact-form').on('submit', function(e) {
 		const $submit = $form.find('input[type="submit"]');
 		const $message = $('<p class="form-success">Thanks! Your message has been sent.</p>');
 
-		// Send form data using AJAX
+		// Sends form data using AJAX
 		$.ajax({
 			url: $form.attr('action'),
 			method: 'POST',
@@ -410,7 +409,7 @@ $(document).ready(function() {
                 $img.attr('src', hoverData[index].image);
                 $link.attr('href', hoverData[index].link);
 
-            }, 1000);
+            }, 2200);
 
             $img.data('interval', interval);
 
@@ -432,5 +431,40 @@ $(document).ready(function() {
     );
 
 });
+
+$(document).ready(function() {
+    const $project = $('.portfolio-project');	//targets class instead of id (id is with #)
+
+    // Listen for mobile touch starts
+    $project.on('touchstart', function(e) {
+        // Checks if the project container already has an active class
+        if (!$(this).hasClass('is-active')) {
+            
+            // First tap: Stop the browser from instantly following the link
+            e.preventDefault();
+            
+            // Add the class that hides the badge and triggers the hover states
+            $(this).addClass('is-active');
+            
+            // Optional Integration:
+            
+            $(this).trigger('mouseenter');
+        }
+        /* If it already has 'is-active', this block is skipped, 
+         allowing the second tap to navigate to the live link natively. */
+    });
+
+    // Close preview / reset badge if the user taps anywhere else on the screen
+    $(document).on('touchstart', function(e) {
+        if (!$(e.target).closest('.portfolio-project').length) {
+            $project.removeClass('is-active');
+            
+            // Triggers the template's mouseleave to reset the image
+            $project.trigger('mouseleave');
+        }
+    });
+});
+
+
 
 })(jQuery);
